@@ -1,1 +1,18 @@
-<h1>New User</h1>
+<h1 style="text-align:center">New User</h1>
+
+<form action="/users" method="POST" accept-charset="utf-8" data-turbo="false">
+  <div>
+    <label for="username">Enter a username: </label><br>
+    <input name="user[username]" id="username" type="text">
+  </div>
+  <div>
+    <label for="email">Enter your email address: </label><br>
+    <input type="email" name="user[email]" id="email">
+  </div>
+  <div>
+    <label for="password">Enter a password</label><br>
+    <input type="password" name="user[password]" id="password">
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" name="commit" value="Create User">
+</form>
