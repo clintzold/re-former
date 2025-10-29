@@ -1,20 +1,4 @@
 <h1 style="text-align:center">Edit User</h1>
 
-<%= form_with model: @user, url: "/users/#{@user.id}" do |form| %>
-  <% if form.object.errors.any? %>
-      <p style="color:red"><%= form.object.errors.full_messages.first %></p>
-  <% end %>
-  <div>
-    <%= form.label :username, "Enter a username: " %><br>
-    <%= form.text_field :username, placeholder: "John123" %>
-  </div>
-  <div>
-    <%= form.label :email, "Enter your email:" %> <br>
-    <%= form.email_field :email, placeholder: "john@example.com" %>
-  </div>
-  <div>
-    <%= form.label :password, "Create a password:" %> <br>
-    <%= form.password_field :password %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<%= render "form", user: @user, url: "/users/#{@user.id}" %>
+
